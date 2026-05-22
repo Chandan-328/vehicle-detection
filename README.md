@@ -22,36 +22,9 @@ A real-time vehicle detection and tracking system using YOLOv8 with GPU support,
 - **Computer Vision**: OpenCV
 - **Language**: Python
 
-## Installation
-
 ### Prerequisites
 - Python 3.8 or higher
-- CUDA Toolkit (optional, for GPU acceleration)
-
-### Setup Steps
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Chandan-328/vehicle-detection.git
-   cd vehicle-detection
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   
-   Or install manually:
-   ```bash
-   pip install ultralytics opencv-python torch torchvision
-   ```
-
-3. **Verify Installation:**
-   ```bash
-   python check_classes.py
-   ```
-
-## Usage
+- CUDA Toolkit (optional, for GPU acceleration
 
 ### Running the Application
 
@@ -121,47 +94,6 @@ vehicle-detection/
 ├── istockphoto-2193558699-640_adpp_is.mp4  # Sample video
 └── README.md                       # This file
 ```
-
-## Example Output
-
-**Video Processing:**
-```
-Using device: 0
-Total Unique Vehicles: 15
-FPS: 28
-```
-
-**Image Processing:**
-```
-Using device: cpu
-Total Vehicles: 8
-```
-
-## Performance Tips
-
-💡 **For Best Results:**
-- Use clear, well-lit videos/images
-- Ensure vehicles are visible and not heavily obscured
-- Use GPU for significantly faster processing on large files
-- Reduce video resolution if processing is slow
-- Adjust `conf` parameter (0.3-0.7) for different detection sensitivity
-
-## Customization
-
-### Adjusting Detection Sensitivity
-
-Edit `app.py` line 52-59:
-```python
-results = model.track(
-    frame_resized, 
-    persist=True, 
-    conf=0.5,      # ← Increase for stricter detection (0.5-0.8)
-    iou=0.45,      # ← Adjust IoU threshold if needed
-    device=device,
-    verbose=False
-)
-```
-
 ### Changing Label Names
 
 Edit `app.py` line 21-22:
@@ -169,15 +101,6 @@ Edit `app.py` line 21-22:
 if 1 in model.names and model.names[1] == 'Car':
     model.names[1] = 'Your Custom Label'
 ```
-
-## Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| Model not found | Ensure `best.pt` is in the same directory as `app.py` |
-| Slow processing | Enable GPU or reduce video resolution |
-| No detections | Lower confidence threshold or use clearer footage |
-| CUDA not detected | Install NVIDIA drivers and CUDA Toolkit |
 
 ## Future Enhancements
 
@@ -187,10 +110,6 @@ if 1 in model.names and model.names[1] == 'Car':
 - [ ] Configurable detection parameters in GUI
 - [ ] Real-time camera feed support
 - [ ] Cloud deployment option
-
-## License
-
-This project is open source and available for educational and research purposes.
 
 ## Author
 
@@ -202,7 +121,7 @@ This project is open source and available for educational and research purposes.
 - [OpenCV](https://opencv.org/) - Computer vision library
 - [PyTorch](https://pytorch.org/) - Deep learning framework
 
-## Support
+
 
 For issues, questions, or suggestions, please [open an issue](https://github.com/Chandan-328/vehicle-detection/issues) on GitHub.
 
